@@ -1,6 +1,8 @@
 package pairmatching.controller;
 
 
+import static pairmatching.common.error.ErrorMessage.NO_MATCHING_HISTORY;
+
 import java.util.List;
 import pairmatching.common.enums.MainOption;
 import pairmatching.domain.Course;
@@ -26,14 +28,15 @@ public class Controller {
         PairRepository pairRepository = PairRepository.getInstance();
 
         while(true) {
-            outputView.displayStart();
             MainOption option = inputHandler.getOption();
 
             if (option.equals(MainOption.PAIR_MATCHING)) {
+                outputView.displayInformPage();
                 runPairMatch(pairRepository);
             }
 
             if (option.equals(MainOption.PAIR_FIND)) {
+                outputView.displayInformPage();
                 runPairFind(pairRepository);
             }
 
@@ -63,10 +66,10 @@ public class Controller {
             }
         }
 
-        if (proceedMatch) {
-            pairMatcher.matchPair(course, level, mission);
+        if (!proceedMatch) {
+            return;
         }
-
+        pairMatcher.matchPair(course, level, mission);
         List<Pair> pairs = pairRepository.findPair(course, level, mission);
         outputView.displayFindPair(pairs);
     }
@@ -77,12 +80,19 @@ public class Controller {
         Level level = matchInform.getLevel();
         String mission = matchInform.getMission();
 
+        boolean matchHistory = pairRepository.hasMatchHistory(course, level, mission);
+        if (!matchHistory) {
+            System.out.println(NO_MATCHING_HISTORY.getMessage());
+            return;
+        }
+
         List<Pair> pairs = pairRepository.findPair(course, level, mission);
         outputView.displayFindPair(pairs);
     }
 
     private void runPairInitialize(PairRepository pairRepository) {
         pairRepository.clear();
+        outputView.displayInitializationComplete();
     }
 
 }

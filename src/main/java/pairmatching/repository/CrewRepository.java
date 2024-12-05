@@ -9,8 +9,6 @@ public class CrewRepository {
     private static final CrewRepository Singleton = new CrewRepository();
 
     private final List<Crew> crews = new ArrayList<>();
-    //private final List<Crew> backendCrews = new ArrayList<>();
-    //private final List<Crew> frontendCrews = new ArrayList<>();
 
     public static CrewRepository getInstance() {
         return Singleton;

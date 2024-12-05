@@ -27,6 +27,7 @@ public class PairMatcher {
 
             if (!isDuplicate(pairs)) {
                 PairRepository pairRepository = PairRepository.getInstance();
+                pairRepository.clear();
                 pairRepository.addPairs(pairs);
                 return;
             }
