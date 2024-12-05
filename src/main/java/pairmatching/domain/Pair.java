@@ -1,5 +1,6 @@
 package pairmatching.domain;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Pair {
@@ -16,11 +17,15 @@ public class Pair {
     }
 
     public boolean isSamePairInSameLevel(Pair comparePair) {
-        return  level.equals(comparePair.level)
+        return level.equals(comparePair.level)
                 && crews.equals(comparePair.crews);
     }
 
     public boolean meetCondition(Course course, Level level, String mission) {
-        return  this.course.equals(course) && this.level.equals(level) && this.mission.equals(mission);
+        return this.course.equals(course) && this.level.equals(level) && this.mission.equals(mission);
+    }
+
+    public Set<Crew> getCrews() {
+        return new LinkedHashSet<>(crews);
     }
 }

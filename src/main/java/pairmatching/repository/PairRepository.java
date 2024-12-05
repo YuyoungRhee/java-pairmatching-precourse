@@ -20,6 +20,10 @@ public class PairRepository {
         pairs.add(pair);
     }
 
+    public void addPairs(List<Pair> requestPairs) {
+        pairs.addAll(requestPairs);
+    }
+
     public boolean existSamePairInSameLevel(Pair comparePair) {
         long count = pairs.stream()
                 .filter(pair -> pair.isSamePairInSameLevel(comparePair))
@@ -40,4 +44,9 @@ public class PairRepository {
 
         return count > 0;
     }
+
+    public void clear() {
+        pairs.clear();
+    }
+
 }
