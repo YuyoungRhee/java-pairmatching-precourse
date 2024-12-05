@@ -23,4 +23,8 @@ public class CrewRepository {
     public List<Crew> getCrews() {
         return new ArrayList<>(crews);
     }
+
+    public void clear() {
+        crews.clear();
+    }
 }

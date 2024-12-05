@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pairmatching.domain.Course;
@@ -14,6 +15,11 @@ import pairmatching.domain.Level;
 import pairmatching.domain.Pair;
 
 class PairRepositoryTest {
+
+    @BeforeEach
+    void setUp() {
+        PairRepository.getInstance().clear();
+    }
 
     @DisplayName("같은 레벨에서 이미 페어를 맺은 크루가 있을 시 true를 반환한다.")
     @Test
