@@ -24,5 +24,12 @@ public class Crew {
         return Objects.hash(course, name);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
 }
 
