@@ -17,7 +17,7 @@ public class Application {
         PairMatcher pairMatcher = new PairMatcher(crewRepository.getCrews());
         PairService pairService = new PairService(pairMatcher, PairRepository.getInstance());
 
-        Controller controller = new Controller(pairMatcher, pairService);
+        Controller controller = new Controller(pairService);
 
         controller.run();
     }

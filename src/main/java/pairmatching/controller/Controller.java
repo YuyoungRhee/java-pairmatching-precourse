@@ -19,11 +19,9 @@ public class Controller {
     private final InputView inputView = new InputView();
     private final InputHandler inputHandler = new InputHandler(inputView);
     private final OutputView outputView = new OutputView();
-    private final PairMatcher pairMatcher;
     private final PairService pairService;
 
-    public Controller(PairMatcher pairMatcher, PairService pairService) {
-        this.pairMatcher = pairMatcher;
+    public Controller(PairService pairService) {
         this.pairService = pairService;
     }
 
