@@ -1,6 +1,6 @@
-package pairmatching.common.enums;
+package pairmatching.controller.enums;
 
-import static pairmatching.common.error.ErrorMessage.NOT_IN_YES_NO;
+import static pairmatching.error.ErrorMessage.NOT_IN_YES_NO;
 
 public enum YesNo {
     YES("네"),

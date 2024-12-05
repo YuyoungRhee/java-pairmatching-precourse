@@ -1,6 +1,6 @@
 package pairmatching.domain;
 
-import static pairmatching.common.error.ErrorMessage.EXCEED_ATTEMPT_COUNT;
+import static pairmatching.error.ErrorMessage.EXCEED_ATTEMPT_COUNT;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
@@ -22,7 +22,6 @@ public class PairMatcher {
         List<String> crewNames = getCrewNames(course);
         for (int i = 0; i < RETRY_ATTEMPT; i++) {
             List<String> shuffledCrew = Randoms.shuffle(crewNames);
-
             List<Pair> pairs = createPairs(course, level, mission, shuffledCrew);
 
             if (!isDuplicate(pairs)) {
@@ -40,13 +39,12 @@ public class PairMatcher {
 
         int i = 0;
         while (i < shuffledCrew.size()) {
-
             Set<Crew> crewSet = new LinkedHashSet<>();
 
             crewSet.add(new Crew(course, shuffledCrew.get(i)));
             crewSet.add(new Crew(course, shuffledCrew.get(i + 1)));
 
-            if (i == shuffledCrew.size() - 3) {
+            if (i == shuffledCrew.size() - 3) { //마지막에 3명이 남는 경우
                 crewSet.add(new Crew(course, shuffledCrew.get(i + 2)));
                 i += 1;
             }

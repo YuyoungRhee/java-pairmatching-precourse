@@ -1,6 +1,6 @@
-package pairmatching.common.enums;
+package pairmatching.controller.enums;
 
-import static pairmatching.common.error.ErrorMessage.NO_MAIN_OPTION;
+import static pairmatching.error.ErrorMessage.NO_MAIN_OPTION;
 
 import java.util.Arrays;
 

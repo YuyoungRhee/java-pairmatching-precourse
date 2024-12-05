@@ -1,7 +1,7 @@
 package pairmatching.domain;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static pairmatching.common.error.ErrorMessage.NOT_FOUND_MISSION;
+import static pairmatching.error.ErrorMessage.NOT_FOUND_MISSION;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

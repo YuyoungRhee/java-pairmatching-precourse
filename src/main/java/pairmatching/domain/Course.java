@@ -1,6 +1,6 @@
 package pairmatching.domain;
 
-import static pairmatching.common.error.ErrorMessage.NOT_FOUND_COURSE;
+import static pairmatching.error.ErrorMessage.NOT_FOUND_COURSE;
 
 public enum Course {
     BACKEND("백엔드"),

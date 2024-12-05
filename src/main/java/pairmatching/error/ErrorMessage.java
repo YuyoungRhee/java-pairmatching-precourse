@@ -1,4 +1,4 @@
-package pairmatching.common.error;
+package pairmatching.error;
 
 public enum ErrorMessage {
     NULL_OR_BLANK_INPUT("입력 값은 공백이나 빈 값일 수 없습니다."),

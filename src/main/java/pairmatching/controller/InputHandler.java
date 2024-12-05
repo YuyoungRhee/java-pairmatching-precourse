@@ -1,10 +1,10 @@
 package pairmatching.controller;
 
-import static pairmatching.common.error.ErrorMessage.NULL_OR_BLANK_INPUT;
+import static pairmatching.error.ErrorMessage.NULL_OR_BLANK_INPUT;
 
 import java.util.List;
-import pairmatching.common.enums.MainOption;
-import pairmatching.common.enums.YesNo;
+import pairmatching.controller.enums.MainOption;
+import pairmatching.controller.enums.YesNo;
 import pairmatching.domain.Course;
 import pairmatching.domain.Level;
 import pairmatching.dto.InputForMatchDto;

@@ -1,7 +1,7 @@
 package pairmatching.domain;
 
-import static pairmatching.common.error.ErrorMessage.NOT_FOUND_LEVEL;
-import static pairmatching.common.error.ErrorMessage.NOT_FOUND_MISSION;
+import static pairmatching.error.ErrorMessage.NOT_FOUND_LEVEL;
+import static pairmatching.error.ErrorMessage.NOT_FOUND_MISSION;
 
 import java.util.Arrays;
 import java.util.Collections;
